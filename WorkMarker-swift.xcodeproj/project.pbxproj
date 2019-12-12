@@ -17,6 +17,12 @@
 		7C06CE5A23A0F0F9009AE1CA /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE5923A0F0F9009AE1CA /* MainTabBarViewController.swift */; };
 		7C06CE5E23A1D4DA009AE1CA /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE5D23A1D4DA009AE1CA /* UIImage+.swift */; };
 		7C06CE6023A1D8E1009AE1CA /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE5F23A1D8E1009AE1CA /* UIColor+.swift */; };
+		7C06CE6323A1DE38009AE1CA /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6223A1DE38009AE1CA /* AVPlayerView.swift */; };
+		7C06CE6623A21183009AE1CA /* WebCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6523A21183009AE1CA /* WebCacheManager.swift */; };
+		7C06CE6823A21196009AE1CA /* WebDoanloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6723A21196009AE1CA /* WebDoanloader.swift */; };
+		7C06CE6A23A211D2009AE1CA /* WebDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6923A211D2009AE1CA /* WebDownloadOperation.swift */; };
+		7C06CE6C23A211EF009AE1CA /* WebCombineOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6B23A211EF009AE1CA /* WebCombineOperation.swift */; };
+		7C06CE6F23A24497009AE1CA /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6E23A24497009AE1CA /* String+.swift */; };
 		A07E21F6CD7CFF6D4A3E2CF9 /* Pods_WorkMarker_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +40,13 @@
 		7C06CE5923A0F0F9009AE1CA /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		7C06CE5D23A1D4DA009AE1CA /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		7C06CE5F23A1D8E1009AE1CA /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		7C06CE6223A1DE38009AE1CA /* AVPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		7C06CE6523A21183009AE1CA /* WebCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheManager.swift; sourceTree = "<group>"; };
+		7C06CE6723A21196009AE1CA /* WebDoanloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDoanloader.swift; sourceTree = "<group>"; };
+		7C06CE6923A211D2009AE1CA /* WebDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDownloadOperation.swift; sourceTree = "<group>"; };
+		7C06CE6B23A211EF009AE1CA /* WebCombineOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCombineOperation.swift; sourceTree = "<group>"; };
+		7C06CE6D23A23209009AE1CA /* WorkMarker+bridging+header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkMarker+bridging+header.h"; sourceTree = "<group>"; };
+		7C06CE6E23A24497009AE1CA /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		AE5FA1F550476696C4938678 /* Pods-WorkMarker-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkMarker-swift.release.xcconfig"; path = "Target Support Files/Pods-WorkMarker-swift/Pods-WorkMarker-swift.release.xcconfig"; sourceTree = "<group>"; };
 		DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkMarker_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +105,7 @@
 				7C06CE4323A09D45009AE1CA /* AppDelegate */,
 				7C06CE4423A09D6C009AE1CA /* Recource */,
 				7C06CE3D239F8992009AE1CA /* Info.plist */,
+				7C06CE6D23A23209009AE1CA /* WorkMarker+bridging+header.h */,
 			);
 			path = "WorkMarker-swift";
 			sourceTree = "<group>";
@@ -117,6 +131,7 @@
 		7C06CE4523A09D9B009AE1CA /* ProjectCode */ = {
 			isa = PBXGroup;
 			children = (
+				7C06CE6423A21164009AE1CA /* WebCache */,
 				7C06CE5C23A1D42C009AE1CA /* Extension */,
 				7C06CE5423A0E63F009AE1CA /* Function */,
 				7C06CE4D23A0C1F0009AE1CA /* Utils */,
@@ -161,6 +176,7 @@
 		7C06CE5723A0E6E7009AE1CA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7C06CE6123A1DE06009AE1CA /* AVPlayer */,
 				7C06CE5523A0E6E3009AE1CA /* HomePageViewController.swift */,
 			);
 			path = Home;
@@ -179,8 +195,28 @@
 			children = (
 				7C06CE5D23A1D4DA009AE1CA /* UIImage+.swift */,
 				7C06CE5F23A1D8E1009AE1CA /* UIColor+.swift */,
+				7C06CE6E23A24497009AE1CA /* String+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7C06CE6123A1DE06009AE1CA /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7C06CE6223A1DE38009AE1CA /* AVPlayerView.swift */,
+			);
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		7C06CE6423A21164009AE1CA /* WebCache */ = {
+			isa = PBXGroup;
+			children = (
+				7C06CE6523A21183009AE1CA /* WebCacheManager.swift */,
+				7C06CE6723A21196009AE1CA /* WebDoanloader.swift */,
+				7C06CE6923A211D2009AE1CA /* WebDownloadOperation.swift */,
+				7C06CE6B23A211EF009AE1CA /* WebCombineOperation.swift */,
+			);
+			path = WebCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,14 +333,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C06CE6A23A211D2009AE1CA /* WebDownloadOperation.swift in Sources */,
 				7C06CE4F23A0C21E009AE1CA /* Constants.swift in Sources */,
+				7C06CE6623A21183009AE1CA /* WebCacheManager.swift in Sources */,
 				7C06CE6023A1D8E1009AE1CA /* UIColor+.swift in Sources */,
 				7C06CE5E23A1D4DA009AE1CA /* UIImage+.swift in Sources */,
 				7C06CE5623A0E6E3009AE1CA /* HomePageViewController.swift in Sources */,
 				7C06CE4923A09DD5009AE1CA /* BaseViewController.swift in Sources */,
 				7C06CE5A23A0F0F9009AE1CA /* MainTabBarViewController.swift in Sources */,
+				7C06CE6823A21196009AE1CA /* WebDoanloader.swift in Sources */,
+				7C06CE6323A1DE38009AE1CA /* AVPlayerView.swift in Sources */,
 				7C06CE30239F898F009AE1CA /* AppDelegate.swift in Sources */,
 				7C06CE32239F898F009AE1CA /* SceneDelegate.swift in Sources */,
+				7C06CE6F23A24497009AE1CA /* String+.swift in Sources */,
+				7C06CE6C23A211EF009AE1CA /* WebCombineOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "top.dongjiawang.github-WorkMarker.WorkMarker-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkMarker-swift/WorkMarker+bridging+header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -473,6 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "top.dongjiawang.github-WorkMarker.WorkMarker-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkMarker-swift/WorkMarker+bridging+header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
