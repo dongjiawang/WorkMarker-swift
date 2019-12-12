@@ -15,7 +15,6 @@ class HomePageViewController: BaseViewController {
 
         // Do any additional setup after loading the view.        
         
-        self.title = "标题"
     }
 
 }

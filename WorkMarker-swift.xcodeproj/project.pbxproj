@@ -15,6 +15,8 @@
 		7C06CE4F23A0C21E009AE1CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE4E23A0C21E009AE1CA /* Constants.swift */; };
 		7C06CE5623A0E6E3009AE1CA /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE5523A0E6E3009AE1CA /* HomePageViewController.swift */; };
 		7C06CE5A23A0F0F9009AE1CA /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE5923A0F0F9009AE1CA /* MainTabBarViewController.swift */; };
+		7C06CE5E23A1D4DA009AE1CA /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE5D23A1D4DA009AE1CA /* UIImage+.swift */; };
+		7C06CE6023A1D8E1009AE1CA /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE5F23A1D8E1009AE1CA /* UIColor+.swift */; };
 		A07E21F6CD7CFF6D4A3E2CF9 /* Pods_WorkMarker_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		7C06CE4E23A0C21E009AE1CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7C06CE5523A0E6E3009AE1CA /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		7C06CE5923A0F0F9009AE1CA /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		7C06CE5D23A1D4DA009AE1CA /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		7C06CE5F23A1D8E1009AE1CA /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		AE5FA1F550476696C4938678 /* Pods-WorkMarker-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkMarker-swift.release.xcconfig"; path = "Target Support Files/Pods-WorkMarker-swift/Pods-WorkMarker-swift.release.xcconfig"; sourceTree = "<group>"; };
 		DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkMarker_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +117,7 @@
 		7C06CE4523A09D9B009AE1CA /* ProjectCode */ = {
 			isa = PBXGroup;
 			children = (
+				7C06CE5C23A1D42C009AE1CA /* Extension */,
 				7C06CE5423A0E63F009AE1CA /* Function */,
 				7C06CE4D23A0C1F0009AE1CA /* Utils */,
 				7C06CE4723A09DB0009AE1CA /* BaseViewController */,
@@ -167,6 +172,15 @@
 				7C06CE5923A0F0F9009AE1CA /* MainTabBarViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		7C06CE5C23A1D42C009AE1CA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7C06CE5D23A1D4DA009AE1CA /* UIImage+.swift */,
+				7C06CE5F23A1D8E1009AE1CA /* UIColor+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C06CE4F23A0C21E009AE1CA /* Constants.swift in Sources */,
+				7C06CE6023A1D8E1009AE1CA /* UIColor+.swift in Sources */,
+				7C06CE5E23A1D4DA009AE1CA /* UIImage+.swift in Sources */,
 				7C06CE5623A0E6E3009AE1CA /* HomePageViewController.swift in Sources */,
 				7C06CE4923A09DD5009AE1CA /* BaseViewController.swift in Sources */,
 				7C06CE5A23A0F0F9009AE1CA /* MainTabBarViewController.swift in Sources */,
