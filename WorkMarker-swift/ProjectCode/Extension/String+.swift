@@ -67,4 +67,19 @@ extension String {
         }
         return nil
     }
+    
+    /// 拼接网络请求地址
+    func splicingRequestURL() -> URL {
+        return URL(string: self.splicingRequestURLString())!
+    }
+    /// 拼接网络请求地址的字符串
+    func splicingRequestURLString() -> String {
+        var resultString: String
+        if self.hasPrefix("http://") || self.hasPrefix("https://") || self.hasPrefix("www") {
+            resultString = self
+        } else {
+            resultString = BaseUrl + self
+        }
+        return resultString.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "`#%^{}\"[]|\\<> "))!
+    }
 }

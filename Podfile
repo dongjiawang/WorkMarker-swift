@@ -11,7 +11,7 @@ inhibit_all_warnings!
 
   # Pods for WorkMarker-swift
     pod 'SwiftyUserDefaults'
-    pod 'SwiftyJSON'
+    pod 'HandyJSON'
     pod 'Kingfisher'
     pod 'ReachabilitySwift'
     pod 'SnapKit'

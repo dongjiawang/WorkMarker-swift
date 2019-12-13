@@ -24,6 +24,10 @@
 		7C06CE6C23A211EF009AE1CA /* WebCombineOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6B23A211EF009AE1CA /* WebCombineOperation.swift */; };
 		7C06CE6F23A24497009AE1CA /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6E23A24497009AE1CA /* String+.swift */; };
 		7C06CE7123A32894009AE1CA /* AVPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE7023A32894009AE1CA /* AVPlayerManager.swift */; };
+		7C06CE7323A35F3B009AE1CA /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE7223A35F3B009AE1CA /* NetWorkManager.swift */; };
+		7C06CE7823A379FA009AE1CA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE7723A379FA009AE1CA /* BaseModel.swift */; };
+		7C06CE7A23A37A85009AE1CA /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE7923A37A85009AE1CA /* BaseRequest.swift */; };
+		7C06CE7C23A3939B009AE1CA /* UploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE7B23A3939B009AE1CA /* UploadRequest.swift */; };
 		A07E21F6CD7CFF6D4A3E2CF9 /* Pods_WorkMarker_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +53,10 @@
 		7C06CE6D23A23209009AE1CA /* WorkMarker+bridging+header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkMarker+bridging+header.h"; sourceTree = "<group>"; };
 		7C06CE6E23A24497009AE1CA /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		7C06CE7023A32894009AE1CA /* AVPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerManager.swift; sourceTree = "<group>"; };
+		7C06CE7223A35F3B009AE1CA /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
+		7C06CE7723A379FA009AE1CA /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		7C06CE7923A37A85009AE1CA /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		7C06CE7B23A3939B009AE1CA /* UploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRequest.swift; sourceTree = "<group>"; };
 		AE5FA1F550476696C4938678 /* Pods-WorkMarker-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkMarker-swift.release.xcconfig"; path = "Target Support Files/Pods-WorkMarker-swift/Pods-WorkMarker-swift.release.xcconfig"; sourceTree = "<group>"; };
 		DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkMarker_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,12 +141,13 @@
 		7C06CE4523A09D9B009AE1CA /* ProjectCode */ = {
 			isa = PBXGroup;
 			children = (
+				7C06CE7623A379E6009AE1CA /* Entity */,
+				7C06CE4623A09DA3009AE1CA /* NetWork */,
 				7C06CE6423A21164009AE1CA /* WebCache */,
 				7C06CE5C23A1D42C009AE1CA /* Extension */,
 				7C06CE5423A0E63F009AE1CA /* Function */,
 				7C06CE4D23A0C1F0009AE1CA /* Utils */,
 				7C06CE4723A09DB0009AE1CA /* BaseViewController */,
-				7C06CE4623A09DA3009AE1CA /* NetWork */,
 			);
 			path = ProjectCode;
 			sourceTree = "<group>";
@@ -146,6 +155,9 @@
 		7C06CE4623A09DA3009AE1CA /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				7C06CE7523A3798A009AE1CA /* HttpResponse */,
+				7C06CE7423A37981009AE1CA /* HttpRequest */,
+				7C06CE7223A35F3B009AE1CA /* NetWorkManager.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -220,6 +232,30 @@
 				7C06CE6B23A211EF009AE1CA /* WebCombineOperation.swift */,
 			);
 			path = WebCache;
+			sourceTree = "<group>";
+		};
+		7C06CE7423A37981009AE1CA /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				7C06CE7923A37A85009AE1CA /* BaseRequest.swift */,
+				7C06CE7B23A3939B009AE1CA /* UploadRequest.swift */,
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		7C06CE7523A3798A009AE1CA /* HttpResponse */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HttpResponse;
+			sourceTree = "<group>";
+		};
+		7C06CE7623A379E6009AE1CA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7C06CE7723A379FA009AE1CA /* BaseModel.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,12 +376,16 @@
 				7C06CE4F23A0C21E009AE1CA /* Constants.swift in Sources */,
 				7C06CE6623A21183009AE1CA /* WebCacheManager.swift in Sources */,
 				7C06CE6023A1D8E1009AE1CA /* UIColor+.swift in Sources */,
+				7C06CE7323A35F3B009AE1CA /* NetWorkManager.swift in Sources */,
 				7C06CE5E23A1D4DA009AE1CA /* UIImage+.swift in Sources */,
 				7C06CE5623A0E6E3009AE1CA /* HomePageViewController.swift in Sources */,
 				7C06CE4923A09DD5009AE1CA /* BaseViewController.swift in Sources */,
+				7C06CE7A23A37A85009AE1CA /* BaseRequest.swift in Sources */,
 				7C06CE7123A32894009AE1CA /* AVPlayerManager.swift in Sources */,
 				7C06CE5A23A0F0F9009AE1CA /* MainTabBarViewController.swift in Sources */,
+				7C06CE7C23A3939B009AE1CA /* UploadRequest.swift in Sources */,
 				7C06CE6823A21196009AE1CA /* WebDoanloader.swift in Sources */,
+				7C06CE7823A379FA009AE1CA /* BaseModel.swift in Sources */,
 				7C06CE6323A1DE38009AE1CA /* AVPlayerView.swift in Sources */,
 				7C06CE30239F898F009AE1CA /* AppDelegate.swift in Sources */,
 				7C06CE32239F898F009AE1CA /* SceneDelegate.swift in Sources */,
