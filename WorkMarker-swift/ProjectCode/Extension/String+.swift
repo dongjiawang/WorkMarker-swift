@@ -79,7 +79,7 @@ extension String {
             resultString = self
         } else {
             resultString = BaseUrl + self
-        }
-        return resultString.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "`#%^{}\"[]|\\<> "))!
+        }        
+        return resultString.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "`#%^{}\"[]|\\<> ").inverted)!
     }
 }

@@ -131,7 +131,7 @@ extension NetWorkManager {
         if showHUD {
             HUD.show(.systemActivity)            
         }
-        
+                
         let sessionRequest = sessionManager.request(url.splicingRequestURL(), method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers)
         sessionRequest.validate(contentType: requestContentType)
         sessionRequest.responseJSON { (response) in
@@ -141,9 +141,9 @@ extension NetWorkManager {
     }
     /// 请求完毕回调，处理成功或者失败
     static func requestComplete(response: DataResponse<Any>, success: @escaping HttpSuccess, failure: @escaping HttpFailure) {
-        let data:[String: Any] = response.result.value as! [String : Any]
         switch response.result {
         case .success:
+            let data:[String: Any] = response.result.value as! [String : Any]
             success(data)
             break
         case .failure(let error):
@@ -153,7 +153,7 @@ extension NetWorkManager {
                 return
             }
             
-            var message: String = data["message"] as! String
+            var message: String = err.localizedDescription
             if message == "No message available" {
                 message = ""
             }

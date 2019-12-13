@@ -103,7 +103,7 @@ class AVPlayerView: UIView {
     /// - Parameter url: 视频地址
     func setPlayerSourceUrl(url: String?) {
         // 过滤中文和特殊字符
-        let sourceurl = url?.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "`#%^{}\"[]|\\<> "))
+        let sourceurl = url?.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "`#%^{}\"[]|\\<> ").inverted)
         sourceURL = URL(string: sourceurl ?? "")
         
         let components = URLComponents(url: sourceURL!, resolvingAgainstBaseURL: false)

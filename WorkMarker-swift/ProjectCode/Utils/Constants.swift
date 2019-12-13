@@ -10,8 +10,20 @@ import Foundation
 import UIKit
 
 // MARK: - 请求地址
-
 let BaseUrl: String = "http://ugcdev.qimooc.net/"
+/// 公共上传接口
+let URLForUpload = "api/upload/file"
+/// 登录接口
+let URLForLogin = "api/login"
+
+/// 首页登录后的列表
+let URLForHomePageLearner = "api/learner/ugc/courses"
+/// 未登录
+let URLForHomePageOpen = "api/open/ugc/courses"
+
+
+
+
 
 
 // MARK: - 颜色

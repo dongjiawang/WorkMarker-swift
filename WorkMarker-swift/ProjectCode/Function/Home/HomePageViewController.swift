@@ -15,6 +15,15 @@ class HomePageViewController: BaseViewController {
 
         // Do any additional setup after loading the view.        
         
+        self.perform(#selector(request), with: nil, afterDelay: 3)
+    }
+    
+    @objc func request() {
+        NetWorkManager.get(url: URLForHomePageOpen, request: BaseRequest(), showHUD: true, success: { (data) in
+            
+        }) { (data) in
+            
+        }
     }
 
 }
