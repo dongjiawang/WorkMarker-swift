@@ -73,7 +73,7 @@ class WebCacheManager: NSObject {
     /// - Parameters:
     ///   - key: key 值
     ///   - cacheQueryCompletedBlock: 查询完毕后回调
-    ///   - exten: 范围
+    ///   - exten: 扩展名
     func queryDataFromMemory(key: String, cacheQueryCompletedBlock: @escaping WebCacheQueryCompletedBlock, exten: String?) -> Operation {
         let operation = Operation()
         ioQueue?.sync {
@@ -106,7 +106,7 @@ class WebCacheManager: NSObject {
     /// - Parameters:
     ///   - key: key 值
     ///   - cacheQueryCompletedBlock: 查询完毕后回调
-    ///   - exten: 范围
+    ///   - exten: 扩展名
     func queryURLFromDiskMemory(key: String, cacheQueryCompletedBlock: @escaping WebCacheQueryCompletedBlock, exten: String?) -> Operation {
         let operation = Operation()
         ioQueue?.sync {
@@ -139,8 +139,6 @@ class WebCacheManager: NSObject {
     }
     /// 存储数据到磁盘
     /// - Parameters:
-    ///   - data: <#data description#>
-    ///   - key: <#key description#>
     func storeDataToDiskCache(data: Data?, key: String) {
         self.storeDataToDiskCache(data: data, key: key, exten: nil)
     }
@@ -149,7 +147,7 @@ class WebCacheManager: NSObject {
     /// - Parameters:
     ///   - data: 数据
     ///   - key: key 值
-    ///   - exten: 范围
+    ///   - exten: 扩展名
     func storeDataToDiskCache(data: Data?, key: String, exten: String?) {
         if let diskPath = diskCachePathForKey(key: key, exten: exten) {
             fileManager.createFile(atPath: diskPath, contents: data, attributes: nil)
@@ -172,7 +170,7 @@ class WebCacheManager: NSObject {
     /// 根据 key 获取本地磁盘缓存数据
     /// - Parameters:
     ///   - key: key 值
-    ///   - exten: 长度
+    ///   - exten: 扩展名
     func dataFromDiskCache(key: String, exten: String?) -> Data? {
         if let cachePathForKey = diskCachePathForKey(key: key, exten: exten) {
             do {
@@ -187,7 +185,7 @@ class WebCacheManager: NSObject {
     /// 获取 key 值对应的磁盘缓存路径 （包含扩展名）
     /// - Parameters:
     ///   - key: key 值
-    ///   - exten: 路径
+    ///   - exten: 扩展名
     func diskCachePathForKey(key: String, exten: String?) -> String? {
         let fileName = key.sha256()
         var cachePathForKey = diskCacheDirectoryURL?.appendingPathComponent(fileName).path

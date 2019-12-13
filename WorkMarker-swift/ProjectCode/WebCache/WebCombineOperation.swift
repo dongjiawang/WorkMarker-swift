@@ -34,5 +34,4 @@ class WebCombineOperation: NSObject {
             cancelBlock = nil
         }
     }
-    
 }

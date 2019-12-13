@@ -21,11 +21,6 @@ class WebDoanloader: NSObject {
     }
     
     /// 下载资源数据
-    /// - Parameters:
-    ///   - url: 资源地址
-    ///   - progress: 进度回调
-    ///   - completed: 成功回调
-    ///   - cancel: 取消回调
     func download(url: URL, progress: @escaping WebDownloaderProgressBlock, completed: @escaping WebDownloaderCompletedBlock, cancel: @escaping WebDownloaderCancelBlock) -> WebCombineOperation {
         // 创建数据请求
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 15)

@@ -56,4 +56,15 @@ extension String {
         return md5String
     }
     */
+    
+    /// 添加 scheme
+    /// - Parameter scheme: scheme
+    func urlScheme(scheme: String) -> URL? {
+        if let url = URL(string: self) {
+            var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            components?.scheme = scheme
+            return components?.url
+        }
+        return nil
+    }
 }

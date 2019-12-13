@@ -10,14 +10,14 @@ target 'WorkMarker-swift' do
 inhibit_all_warnings!
 
   # Pods for WorkMarker-swift
-pod 'SwiftyUserDefaults'
-pod 'SwiftyJSON'
-pod 'Kingfisher'
-pod 'Moya'
-pod 'ReachabilitySwift'
-pod 'SnapKit'
-pod 'PKHUD'
-pod 'SPPermissions'
-pod 'WCDB.swift'
+    pod 'SwiftyUserDefaults'
+    pod 'SwiftyJSON'
+    pod 'Kingfisher'
+    pod 'ReachabilitySwift'
+    pod 'SnapKit'
+    pod 'PKHUD'
+    pod 'SPPermissions'
+    pod 'WCDB.swift'
+    pod 'Alamofire'
 
 end

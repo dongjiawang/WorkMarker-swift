@@ -23,6 +23,7 @@
 		7C06CE6A23A211D2009AE1CA /* WebDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6923A211D2009AE1CA /* WebDownloadOperation.swift */; };
 		7C06CE6C23A211EF009AE1CA /* WebCombineOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6B23A211EF009AE1CA /* WebCombineOperation.swift */; };
 		7C06CE6F23A24497009AE1CA /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE6E23A24497009AE1CA /* String+.swift */; };
+		7C06CE7123A32894009AE1CA /* AVPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CE7023A32894009AE1CA /* AVPlayerManager.swift */; };
 		A07E21F6CD7CFF6D4A3E2CF9 /* Pods_WorkMarker_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		7C06CE6B23A211EF009AE1CA /* WebCombineOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCombineOperation.swift; sourceTree = "<group>"; };
 		7C06CE6D23A23209009AE1CA /* WorkMarker+bridging+header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkMarker+bridging+header.h"; sourceTree = "<group>"; };
 		7C06CE6E23A24497009AE1CA /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		7C06CE7023A32894009AE1CA /* AVPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerManager.swift; sourceTree = "<group>"; };
 		AE5FA1F550476696C4938678 /* Pods-WorkMarker-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkMarker-swift.release.xcconfig"; path = "Target Support Files/Pods-WorkMarker-swift/Pods-WorkMarker-swift.release.xcconfig"; sourceTree = "<group>"; };
 		DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkMarker_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				7C06CE6223A1DE38009AE1CA /* AVPlayerView.swift */,
+				7C06CE7023A32894009AE1CA /* AVPlayerManager.swift */,
 			);
 			path = AVPlayer;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				7C06CE5E23A1D4DA009AE1CA /* UIImage+.swift in Sources */,
 				7C06CE5623A0E6E3009AE1CA /* HomePageViewController.swift in Sources */,
 				7C06CE4923A09DD5009AE1CA /* BaseViewController.swift in Sources */,
+				7C06CE7123A32894009AE1CA /* AVPlayerManager.swift in Sources */,
 				7C06CE5A23A0F0F9009AE1CA /* MainTabBarViewController.swift in Sources */,
 				7C06CE6823A21196009AE1CA /* WebDoanloader.swift in Sources */,
 				7C06CE6323A1DE38009AE1CA /* AVPlayerView.swift in Sources */,
