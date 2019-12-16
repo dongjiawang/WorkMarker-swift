@@ -31,7 +31,7 @@ enum NetworkMethod {
 }
 
 typealias HttpSuccess = (_ data: Any) -> Void
-typealias HttpFailure = (_ data: Any) -> Void
+typealias HttpFailure = (_ error: Error) -> Void
 typealias UploadProgress = (_ percent: CGFloat) -> Void
 
 class NetWorkManager: NSObject {

@@ -19,5 +19,6 @@ inhibit_all_warnings!
     pod 'SPPermissions'
     pod 'WCDB.swift'
     pod 'Alamofire'
+    pod 'MJRefresh'
 
 end

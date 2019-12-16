@@ -49,7 +49,7 @@ class AVPlayerManager: NSObject {
         }
     }
     
-    func pauseAll(player: AVPlayer) {
+    func pauseAll() {
         for object in playerArray {
             object.pause()
         }
