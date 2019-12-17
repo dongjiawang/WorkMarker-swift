@@ -91,8 +91,21 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     @objc func clickedPlusBtn() {
+        isLogin = true
         if isLogin {
-            
+            let popMenuVC = MainPopMenuViewController()
+            popMenuVC.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(popMenuVC, animated: true, completion: nil)            
+            popMenuVC.selectedAddTypeBlock = {tag in
+                switch tag {
+                case 0:
+                    print("添加音频")
+                case 1:
+                    print("添加视频")
+                default:
+                    break
+                }
+            }
         } else {
             let loginVC = LoginViewController()
             loginVC.modalPresentationStyle = .fullScreen
