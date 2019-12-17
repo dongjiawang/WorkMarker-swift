@@ -15,15 +15,14 @@ class HomePageViewController: BaseTableViewController {
     
     var currentIndex = 0
     var isCurrentPlayerPause = false
-    
-    
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.        
         self.view.backgroundColor = .black
         
+        self.tableView.backgroundColor = .black
         self.tableView.rowHeight = self.view.bounds.height
         self.tableView.register(HomePageTableViewCell.classForCoder(), forCellReuseIdentifier: HomePageCell)
         self.tableView.showsVerticalScrollIndicator = false

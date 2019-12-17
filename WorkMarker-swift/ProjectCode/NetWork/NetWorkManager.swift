@@ -109,6 +109,11 @@ extension NetWorkManager {
             requestComplete(response: response, success: success, failure: failure)
         }
     }
+    
+    /// 取消请求
+    static func cancelAllOperations() {
+        sessionManager.session.invalidateAndCancel()
+    }
 }
 
 // MARK: - 封装的基础网络请求

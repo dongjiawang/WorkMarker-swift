@@ -10,6 +10,8 @@ import UIKit
 
 class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
+    var plusBtn: UIButton = UIButton(type: .custom)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         
         self.addChildViewControllers()
+        self.addPlusBtn(image: UIImage(named: "WorkCourseBtn")!, selectedImage: UIImage(named: "WorkCourseBtn")!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +43,21 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
         let personal = HomePageViewController()
         self.addTabItem(controller: personal, normalImage: UIImage(named: "MainTabarMineBtn_normal")!, selectedImage: UIImage(named: "MainTabarMineBtn_selected")!, title: "个人")
+    }
+    
+    func addPlusBtn(image: UIImage, selectedImage: UIImage) {
+        self.plusBtn.clipsToBounds = true
+        self.plusBtn.layer.cornerRadius = 30
+        self.plusBtn.addTarget(self, action: #selector(clickedPlusBtn), for: .touchUpInside)
+        self.plusBtn.setImage(image, for: .normal)
+        self.plusBtn.setImage(selectedImage, for: .selected)
+        self.view.addSubview(self.plusBtn)
+        
+        self.plusBtn.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.tabBar)
+            make.size.equalTo(CGSize(width: 60, height: 60))
+            make.bottom.equalTo(self.tabBar.snp.top).offset(40)
+        }
     }
     
     func addTabItem(controller: UIViewController, normalImage: UIImage, selectedImage: UIImage, title: String) {
@@ -70,5 +88,29 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             self.tabBar.barTintColor = UIColor.white            
             self.tabBar.backgroundImage = UIColor.white.drawToImage(size: CGSize(width: 100, height: 50))
         }
+    }
+    
+    @objc func clickedPlusBtn() {
+        if isLogin {
+            
+        } else {
+            let loginVC = LoginViewController()
+            loginVC.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(loginVC, animated: true, completion: nil)
+            loginVC.loginSucessBlock = { [weak self] in
+                self!.loginSucess()
+            }
+        }
+    }
+    
+    func loginSucess() {
+        NetWorkManager.cancelAllOperations()
+        
+        /// 刷新首页
+        let homeVC = self.viewControllers?.first as? HomePageViewController
+        homeVC?.refreshAction()
+        
+        /// 刷新个人中心
+        
     }
 }

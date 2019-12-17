@@ -16,7 +16,7 @@ class HomePageRequest: BaseRequest {
         let request = HomePageRequest()
         request.page = page
         request.size = size
-        NetWorkManager.get(url: URLForHomePageOpen, request: request, showHUD: true, success: { (data) in
+        NetWorkManager.get(url: isLogin ? URLForHomePageLearner : URLForHomePageOpen, request: request, showHUD: true, success: { (data) in
             if let response = HomePageCourseListResponse.deserialize(from: data as? [String: Any]) {
                 success(response)
             }

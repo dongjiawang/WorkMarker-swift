@@ -8,6 +8,10 @@
 
 import UIKit
 
+var isLogin = false
+var userToken: String?
+var user: User?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
