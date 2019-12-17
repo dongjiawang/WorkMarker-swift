@@ -9,6 +9,7 @@
 import UIKit
 import MJRefresh
 import SnapKit
+import LYEmptyView
 
 class BaseTableViewController: BaseViewController {
     /// 没有下拉刷新
@@ -101,10 +102,20 @@ class BaseTableViewController: BaseViewController {
         self.dataTotal = Int(dataTotal)
         self.tableDataArray.append(array)
         self.tableView.reloadData()
+        
+        if self.tableDataArray.count == 0 {
+            self.tableView.ly_emptyView = LYEmptyView.emptyActionView(with: UIImage(named: "NoDataTipImage"), titleStr: "无数据", detailStr: "请稍后再试", btnTitleStr: "重新加载", btnClick: {
+                self.requestTableData()
+            })
+        }
     }
     
     func requestNetDataFailed() {
-        
+        if self.tableDataArray.count == 0 {
+            self.tableView.ly_emptyView = LYEmptyView.emptyActionView(with: UIImage(named: "NoDataTipImage"), titleStr: "网络请求失败", detailStr: "请稍后再试", btnTitleStr: "重新加载", btnClick: {
+                self.requestTableData()
+            })
+        }
     }
     
     func feedbackGenerator() {

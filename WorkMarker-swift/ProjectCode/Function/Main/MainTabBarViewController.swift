@@ -33,13 +33,13 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     func addChildViewControllers() {
         let home = HomePageViewController()
-        self.addTabItem(controller: home, normalImage: UIImage(systemName: "house")!.withTintColor(UIColor.lightGray, renderingMode: .alwaysOriginal), selectedImage: UIImage(systemName: "house.fill")!.withTintColor(ColorTheme, renderingMode: .alwaysOriginal), title: "首页")
+        self.addTabItem(controller: home, normalImage: UIImage(named: "MainTabarHomeBtn_normal")!, selectedImage: UIImage(named: "MainTabarHomeBtn_selected")!, title: "首页")
         
         let plus = HomePageViewController()
         self.addTabItem(controller: plus, normalImage: UIImage(systemName: "plus")!.withTintColor(ColorTheme, renderingMode: .alwaysOriginal), selectedImage: UIImage(systemName: "plus")!.withTintColor(ColorTheme, renderingMode: .alwaysOriginal), title: "")
         
         let personal = HomePageViewController()
-        self.addTabItem(controller: personal, normalImage: UIImage(systemName: "person")!.withTintColor(UIColor.lightGray, renderingMode: .alwaysOriginal), selectedImage: UIImage(systemName: "person.fill")!.withTintColor(ColorTheme, renderingMode: .alwaysOriginal), title: "个人")
+        self.addTabItem(controller: personal, normalImage: UIImage(named: "MainTabarMineBtn_normal")!, selectedImage: UIImage(named: "MainTabarMineBtn_selected")!, title: "个人")
     }
     
     func addTabItem(controller: UIViewController, normalImage: UIImage, selectedImage: UIImage, title: String) {

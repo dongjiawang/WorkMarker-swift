@@ -20,5 +20,6 @@ inhibit_all_warnings!
     pod 'WCDB.swift'
     pod 'Alamofire'
     pod 'MJRefresh'
+    pod 'LYEmptyView'
 
 end

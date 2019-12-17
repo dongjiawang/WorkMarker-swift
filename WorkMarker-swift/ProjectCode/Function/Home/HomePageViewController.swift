@@ -127,7 +127,7 @@ extension HomePageViewController {
                 }
             }
         }) { (error) in
-            
+            self.requestNetDataFailed()
         }
     }
 }
