@@ -52,7 +52,7 @@ class PersonalHeaderView: UIView {
             make.width.greaterThanOrEqualTo(self.userImage.snp.width)
         }
         
-        self.editBtn.setImage(UIImage(named: "square.and.pencil"), for: .normal)
+        self.editBtn.setImage(UIImage(named: "个人中心_编辑"), for: .normal)
         self.editBtn.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
         self.editBtn.addTarget(self, action: #selector(clickedEditBtn), for: .touchUpOutside)
         self.addSubview(self.editBtn)

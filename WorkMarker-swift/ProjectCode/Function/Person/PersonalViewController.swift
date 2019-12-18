@@ -67,6 +67,7 @@ class PersonalViewController: BaseViewController {
         let height = UIDevice.current.isiPhoneXMore() ? 180 : 160
         
         let view = PersonalHeaderView(frame: CGRect(x: 0, y: 0, width: Int(self.view.bounds.size.width), height: height))
+    
         view.editUserIconBlock = {() in
             
         }
