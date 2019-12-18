@@ -11,9 +11,13 @@ PODS:
   - PKHUD (5.3.0)
   - ReachabilitySwift (5.0.0)
   - SnapKit (5.0.1)
-  - SPPermissions (5.2.5):
-    - SPPermissions/Core (= 5.2.5)
+  - SPPermissions/Camera (5.2.5):
+    - SPPermissions/Core
   - SPPermissions/Core (5.2.5)
+  - SPPermissions/Microphone (5.2.5):
+    - SPPermissions/Core
+  - SPPermissions/PhotoLibrary (5.2.5):
+    - SPPermissions/Core
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SwiftyUserDefaults (4.0.0)
@@ -33,7 +37,9 @@ DEPENDENCIES:
   - PKHUD
   - ReachabilitySwift
   - SnapKit
-  - SPPermissions
+  - SPPermissions/Camera
+  - SPPermissions/Microphone
+  - SPPermissions/PhotoLibrary
   - SwiftyUserDefaults
   - WCDB.swift
 
@@ -72,6 +78,6 @@ SPEC CHECKSUMS:
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 8e9480e519f9605646eaf525422f3b9a058d47bf
+PODFILE CHECKSUM: f3444fd66fc7f90f2a1d33f42f3330bbf7af3356
 
 COCOAPODS: 1.8.4

@@ -54,7 +54,7 @@ class PersonalHeaderView: UIView {
         
         self.editBtn.setImage(UIImage(named: "个人中心_编辑"), for: .normal)
         self.editBtn.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
-        self.editBtn.addTarget(self, action: #selector(clickedEditBtn), for: .touchUpOutside)
+        self.editBtn.addTarget(self, action: #selector(clickedEditBtn), for: .touchUpInside)
         self.addSubview(self.editBtn)
         self.editBtn.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.nameLabel)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SPPermissions
 
 let HomePageCell = "HomePageTableViewCell"
 
@@ -32,6 +33,10 @@ class HomePageViewController: BaseTableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(applicationBecomeActive), name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(applicationEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+                        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 3)) {
+            self.showSPPermissionsAlert()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -153,6 +158,20 @@ extension HomePageViewController {
             }) { (finished) in
                 scrollView.panGestureRecognizer.isEnabled = true
             }
+        }
+    }
+}
+
+extension HomePageViewController: SPPermissionsDelegate {
+    
+    func showSPPermissionsAlert() {
+        
+        let permissions = [SPPermission.camera, .photoLibrary, .microphone].filter { !$0.isAuthorized }
+        
+        if !permissions.isEmpty {
+            let controller = SPPermissions.native(permissions)
+            controller.delegate = self
+            controller.present(on: self)
         }
     }
 }

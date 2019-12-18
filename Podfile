@@ -16,12 +16,14 @@ inhibit_all_warnings!
     pod 'ReachabilitySwift'
     pod 'SnapKit'
     pod 'PKHUD'
-    pod 'SPPermissions'
     pod 'WCDB.swift'
     pod 'Alamofire'
     pod 'MJRefresh'
     pod 'LYEmptyView'
     pod 'JXPagingView/Paging'
     pod 'JXSegmentedView'
+    pod 'SPPermissions/Camera'
+    pod 'SPPermissions/PhotoLibrary'
+    pod 'SPPermissions/Microphone'
 
 end

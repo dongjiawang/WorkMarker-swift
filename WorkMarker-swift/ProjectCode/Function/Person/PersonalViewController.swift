@@ -70,7 +70,7 @@ class PersonalViewController: BaseViewController {
         let view = PersonalHeaderView(frame: CGRect(x: 0, y: 0, width: Int(self.view.bounds.size.width), height: height))
     
         view.editUserIconBlock = { [weak self] () in
-            
+            self?.showImageAlert()
         }
         view.editUserNameBlock = { [weak self] () in
             self?.showEditNameAlert()
@@ -117,7 +117,7 @@ class PersonalViewController: BaseViewController {
 // MARK: - 修改用户信息
 extension PersonalViewController {
     func showEditNameAlert() {
-        let alertVC = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .alert)
                 
         alertVC.addTextField { (textField) in
             textField.placeholder = "请输入新的名称"
@@ -148,11 +148,11 @@ extension PersonalViewController {
 extension PersonalViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func showImageAlert() {
         let alertVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "拍照", style: .default) { (action) in
-            
+        let cameraAction = UIAlertAction(title: "拍照", style: .default) { [weak self] (action) in
+            self?.presentImagePicker(type: .camera)
         }
-        let libraryAction = UIAlertAction(title: "从相册选取", style: .default) { (action) in
-            
+        let libraryAction = UIAlertAction(title: "从相册选取", style: .default) { [weak self] (action) in
+            self?.presentImagePicker(type: .photoLibrary)
         }
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         

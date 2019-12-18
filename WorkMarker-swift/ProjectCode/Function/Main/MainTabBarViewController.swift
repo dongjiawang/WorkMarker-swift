@@ -24,7 +24,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         
         self.addChildViewControllers()
-        self.addPlusBtn(image: UIImage(named: "WorkCourseBtn")!, selectedImage: UIImage(named: "WorkCourseBtn")!)
+        self.addPlusBtn(image: UIImage(named: "WorkCourseBtn")!, selectedImage: UIImage(named: "WorkCourseBtn")!)                
     }
     
     override func viewWillAppear(_ animated: Bool) {
