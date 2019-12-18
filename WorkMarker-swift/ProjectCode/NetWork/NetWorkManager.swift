@@ -81,7 +81,7 @@ extension NetWorkManager {
     /// 上传文件方法
     ///
     /// 这个方法比较特殊，所以 manager 都是重新创建的，跟常用的请求分开
-    static func postData(url: String, contentType: NetworkRequestContentType, request: UploadRequest, showHUD: Bool, fileData: Any?, success: @escaping HttpSuccess, failure: @escaping HttpFailure) {
+    static func postData(url: String, contentType: NetworkRequestContentType, request: BaseRequest, showHUD: Bool, fileData: Any?, success: @escaping HttpSuccess, failure: @escaping HttpFailure) {
         let sessionConfiguration = URLSessionConfiguration.default
         sessionConfiguration.timeoutIntervalForRequest = 600 // 超时 10分钟
         sessionConfiguration.requestCachePolicy = .reloadIgnoringLocalCacheData // 关闭缓存

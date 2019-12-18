@@ -9,6 +9,7 @@
 import UIKit
 import JXPagingView
 import JXSegmentedView
+import PKHUD
 
 class PersonalViewController: BaseViewController {
     
@@ -68,16 +69,16 @@ class PersonalViewController: BaseViewController {
         
         let view = PersonalHeaderView(frame: CGRect(x: 0, y: 0, width: Int(self.view.bounds.size.width), height: height))
     
-        view.editUserIconBlock = {() in
+        view.editUserIconBlock = { [weak self] () in
             
         }
-        view.editUserNameBlock = { () in
+        view.editUserNameBlock = { [weak self] () in
+            self?.showEditNameAlert()
+        }
+        view.settingAppBlock = { [weak self] () in
             
         }
-        view.settingAppBlock = { () in
-            
-        }
-        view.goBackBlock = { () in
+        view.goBackBlock = { [weak self] () in
             
         }
         return view
@@ -110,6 +111,81 @@ class PersonalViewController: BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.headBackgroundView.removeFromSuperview()
+    }
+}
+
+// MARK: - 修改用户信息
+extension PersonalViewController {
+    func showEditNameAlert() {
+        let alertVC = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+                
+        alertVC.addTextField { (textField) in
+            textField.placeholder = "请输入新的名称"
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let confirAction = UIAlertAction(title: "确认", style: .default) { (action) in
+            self.updateUserDisplayName(name: alertVC.textFields?.first?.text ?? "")
+        }
+        alertVC.addAction(cancelAction)
+        alertVC.addAction(confirAction)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    func updateUserDisplayName(name: String) {
+        if name.count == 0 {
+            HUD.show(.label("不能使用空白用户名"))
+            return
+        }
+        PersonalRequest.updateUserInfo(name: name, userID: "\(String(describing: user?.id))", success: { (data) in
+            user?.displayName = name
+            self.headerView.nameLabel.text = name
+        }) { (error) in
+            
+        }
+    }
+}
+// MARK: - 修改头像
+extension PersonalViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func showImageAlert() {
+        let alertVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "拍照", style: .default) { (action) in
+            
+        }
+        let libraryAction = UIAlertAction(title: "从相册选取", style: .default) { (action) in
+            
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        alertVC.addAction(cameraAction)
+        alertVC.addAction(libraryAction)
+        alertVC.addAction(cancelAction)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    func presentImagePicker(type: UIImagePickerController.SourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = type
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            HUD.flash(.labeledError(title: "获取图片失败", subtitle: "请重新选择"), delay: 1.5)
+            return }
+        self.uploadUserIcon(image: image)
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadUserIcon(image: UIImage) {
+        PersonalRequest.uploadUserIcon(image: image, userId: "\(String(describing: user?.id))", success: { (data) in
+            let response = data as? [String: Any]
+            let imageUrl = response?["avatar"]
+            user?.avatar = imageUrl as? String
+        }) { (error) in
+            
+        }
     }
 }
 
