@@ -54,8 +54,6 @@ class BaseCollectionViewController: BaseViewController {
         
         self.view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
-//            make.top.equalTo(self.view.safeAreaLayoutGuide)
-//            make.left.right.bottom.equalTo(self.view)
             make.edges.equalTo(self.view)
         }
         return collectionView
@@ -94,7 +92,7 @@ class BaseCollectionViewController: BaseViewController {
         self.requestCollectionData()
     }
     
-    func requestTableDataSuccess(array: Array<Any>, dataTotal: Double) {
+    func requestCollectionDataSuccess(array: Array<Any>, dataTotal: Double) {
         self.dataTotal = Int(dataTotal)
         self.collectionDataArray.append(array)
         self.collectionView.reloadData()

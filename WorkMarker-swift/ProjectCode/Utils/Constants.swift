@@ -21,6 +21,23 @@ let URLForHomePageLearner = "api/learner/ugc/courses"
 /// 未登录
 let URLForHomePageOpen = "api/open/ugc/courses"
 
+// MARK: - 个人中心接口
+/// 我的作品
+let URLForMineCourse = "/api/learner/ugc/courses/mine"
+/// 我喜欢的
+let URLForMineCourseLike = "/api/learner/ugc/courses/mine/likes"
+/// 待审核
+let URLForMineCourseNotAudited = "/api/learner/ugc/courses/mine/not-audited"
+/// 上传用户头像，需要后面拼接用户 id
+let URLForUploadUserAvatar = "/api/learner/user/avatar/"
+/// 更新用户信息
+let URLForUpdateUserInfo = "/api/learner/user/info"
+
+
+
+
+
+
 
 
 

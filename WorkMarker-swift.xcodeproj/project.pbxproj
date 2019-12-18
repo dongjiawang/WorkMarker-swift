@@ -50,6 +50,9 @@
 		7CDE16C823A8DC89002FE021 /* PersonalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */; };
 		7CFB525023A9C1A400EDE2B0 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB524F23A9C1A400EDE2B0 /* UIDevice+.swift */; };
 		7CFB525223A9C8E600EDE2B0 /* PersonalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB525123A9C8E600EDE2B0 /* PersonalHeaderView.swift */; };
+		7CFB525423A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB525323A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift */; };
+		7CFB525623A9FCD900EDE2B0 /* PersonalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB525523A9FCD800EDE2B0 /* PersonalRequest.swift */; };
+		7CFB525823A9FCFA00EDE2B0 /* PersonalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB525723A9FCFA00EDE2B0 /* PersonalResponse.swift */; };
 		A07E21F6CD7CFF6D4A3E2CF9 /* Pods_WorkMarker_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +104,9 @@
 		7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewController.swift; sourceTree = "<group>"; };
 		7CFB524F23A9C1A400EDE2B0 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
 		7CFB525123A9C8E600EDE2B0 /* PersonalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHeaderView.swift; sourceTree = "<group>"; };
+		7CFB525323A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewCell.swift; sourceTree = "<group>"; };
+		7CFB525523A9FCD800EDE2B0 /* PersonalRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalRequest.swift; sourceTree = "<group>"; };
+		7CFB525723A9FCFA00EDE2B0 /* PersonalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalResponse.swift; sourceTree = "<group>"; };
 		AE5FA1F550476696C4938678 /* Pods-WorkMarker-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkMarker-swift.release.xcconfig"; path = "Target Support Files/Pods-WorkMarker-swift/Pods-WorkMarker-swift.release.xcconfig"; sourceTree = "<group>"; };
 		DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkMarker_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -292,6 +298,7 @@
 				7C06CE7B23A3939B009AE1CA /* UploadRequest.swift */,
 				7C06CE7F23A39C94009AE1CA /* HomePageRequest.swift */,
 				7CD97DDF23A88B8B0082E3D5 /* LoginRequest.swift */,
+				7CFB525523A9FCD800EDE2B0 /* PersonalRequest.swift */,
 			);
 			path = HttpRequest;
 			sourceTree = "<group>";
@@ -302,6 +309,7 @@
 				7CD97DD623A77B650082E3D5 /* BaseResponse.swift */,
 				7CD97DD823A77BFA0082E3D5 /* HomePageCourseListResponse.swift */,
 				7CD97DE323A88DD70082E3D5 /* LoginResponse.swift */,
+				7CFB525723A9FCFA00EDE2B0 /* PersonalResponse.swift */,
 			);
 			path = HttpResponse;
 			sourceTree = "<group>";
@@ -336,6 +344,7 @@
 				7CDE16C323A8C625002FE021 /* PersonalViewController.swift */,
 				7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */,
 				7CFB525123A9C8E600EDE2B0 /* PersonalHeaderView.swift */,
+				7CFB525323A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -456,6 +465,7 @@
 			files = (
 				7C06CE6A23A211D2009AE1CA /* WebDownloadOperation.swift in Sources */,
 				7CD97DE023A88B8B0082E3D5 /* LoginRequest.swift in Sources */,
+				7CFB525423A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift in Sources */,
 				7CD97DE623A8A9170082E3D5 /* MainPopMenuViewController.swift in Sources */,
 				7C06CE4F23A0C21E009AE1CA /* Constants.swift in Sources */,
 				7C06CE6623A21183009AE1CA /* WebCacheManager.swift in Sources */,
@@ -469,6 +479,7 @@
 				7CDE16C623A8D755002FE021 /* BaseCollectionViewController.swift in Sources */,
 				7C06CE4923A09DD5009AE1CA /* BaseViewController.swift in Sources */,
 				7C1B74C423A733E900EACC48 /* HomePageTableViewCell.swift in Sources */,
+				7CFB525823A9FCFA00EDE2B0 /* PersonalResponse.swift in Sources */,
 				7C06CE7A23A37A85009AE1CA /* BaseRequest.swift in Sources */,
 				7CD97DDC23A872350082E3D5 /* LoginViewController.swift in Sources */,
 				7C1B74D223A7730F00EACC48 /* Chapter.swift in Sources */,
@@ -480,6 +491,7 @@
 				7C1B74D423A773DC00EACC48 /* Course.swift in Sources */,
 				7C1B74D623A77A8400EACC48 /* CourseList.swift in Sources */,
 				7C06CE6823A21196009AE1CA /* WebDoanloader.swift in Sources */,
+				7CFB525623A9FCD900EDE2B0 /* PersonalRequest.swift in Sources */,
 				7C06CE7823A379FA009AE1CA /* BaseModel.swift in Sources */,
 				7C06CE6323A1DE38009AE1CA /* AVPlayerView.swift in Sources */,
 				7C1B74CC23A7707D00EACC48 /* UserAvatar.swift in Sources */,

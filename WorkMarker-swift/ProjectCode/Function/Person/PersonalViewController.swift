@@ -149,11 +149,11 @@ extension PersonalViewController: JXPagingViewDelegate {
     func pagingView(_ pagingView: JXPagingView, initListAtIndex index: Int) -> JXPagingViewListViewDelegate {
         let collectionVC = PersonalCollectionViewController()
         if index == 0 {
-            collectionVC.collectionView.backgroundColor = .red
+            collectionVC.listType = .mine
         } else if index == 1 {
-            collectionVC.collectionView.backgroundColor = .green
+            collectionVC.listType = .likes
         } else {
-            collectionVC.collectionView.backgroundColor = .orange
+            collectionVC.listType = .notAudited
         }
         return collectionVC
     }
