@@ -41,7 +41,8 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let plus = HomePageViewController()
         self.addTabItem(controller: plus, normalImage: UIImage(systemName: "plus")!.withTintColor(ColorTheme, renderingMode: .alwaysOriginal), selectedImage: UIImage(systemName: "plus")!.withTintColor(ColorTheme, renderingMode: .alwaysOriginal), title: "")
         
-        let personal = HomePageViewController()
+        let personal = PersonalViewController()
+        personal.titles = ["作品", "待审核", "喜欢的"]
         self.addTabItem(controller: personal, normalImage: UIImage(named: "MainTabarMineBtn_normal")!, selectedImage: UIImage(named: "MainTabarMineBtn_selected")!, title: "个人")
     }
     

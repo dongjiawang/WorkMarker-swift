@@ -1,6 +1,8 @@
 PODS:
   - Alamofire (4.9.1)
   - HandyJSON (5.0.1)
+  - JXPagingView/Paging (1.2.2)
+  - JXSegmentedView (1.0.2)
   - Kingfisher (5.11.0):
     - Kingfisher/Core (= 5.11.0)
   - Kingfisher/Core (5.11.0)
@@ -23,6 +25,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - HandyJSON
+  - JXPagingView/Paging
+  - JXSegmentedView
   - Kingfisher
   - LYEmptyView
   - MJRefresh
@@ -37,6 +41,8 @@ SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - Alamofire
     - HandyJSON
+    - JXPagingView
+    - JXSegmentedView
     - Kingfisher
     - LYEmptyView
     - MJRefresh
@@ -52,6 +58,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
+  JXPagingView: 538f5d1419bc36f1dbb76ca4510b4d06dd29d973
+  JXSegmentedView: 2988fe07060a9b91b0112eabd6dee0df0cbca8b3
   Kingfisher: 4569606189149e19c7d9439f47e885d0679b7a90
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   MJRefresh: 2b1214a2dc8f4df4c5dcb028ea2ad4e245425fb7
@@ -64,6 +72,6 @@ SPEC CHECKSUMS:
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 72d0d54327d056d00b96b34a9885decc4c881188
+PODFILE CHECKSUM: 8e9480e519f9605646eaf525422f3b9a058d47bf
 
 COCOAPODS: 1.8.4

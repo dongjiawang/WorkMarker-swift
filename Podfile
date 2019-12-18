@@ -21,5 +21,7 @@ inhibit_all_warnings!
     pod 'Alamofire'
     pod 'MJRefresh'
     pod 'LYEmptyView'
+    pod 'JXPagingView/Paging'
+    pod 'JXSegmentedView'
 
 end

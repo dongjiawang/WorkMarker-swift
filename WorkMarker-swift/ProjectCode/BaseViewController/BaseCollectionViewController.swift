@@ -41,21 +41,22 @@ class BaseCollectionViewController: BaseViewController {
         collectionView.backgroundColor = ColorThemeBackground
         if !self.noRefresh {
             collectionView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
-                
+                self.refreshAction()
             })
             collectionView.mj_header?.addObserver(self, forKeyPath: "state", options: .new, context: nil)
         }
         if !self.noLoadMore {
             collectionView.mj_footer = MJRefreshBackFooter.init(refreshingBlock: {
-                
+                self.loadMoreAction()
             })
             collectionView.mj_footer?.addObserver(self, forKeyPath: "state", options: .new, context: nil)
         }
         
         self.view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.left.right.bottom.equalTo(self.view)
+//            make.top.equalTo(self.view.safeAreaLayoutGuide)
+//            make.left.right.bottom.equalTo(self.view)
+            make.edges.equalTo(self.view)
         }
         return collectionView
     }()
