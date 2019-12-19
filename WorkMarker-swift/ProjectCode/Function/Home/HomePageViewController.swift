@@ -33,10 +33,6 @@ class HomePageViewController: BaseTableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(applicationBecomeActive), name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(applicationEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-                        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 3)) {
-            self.showSPPermissionsAlert()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,8 +126,12 @@ extension HomePageViewController {
                     }
                 }
             }
+            /// 网络加载框结束后提示权限
+            self.showSPPermissionsAlert()
         }) { (error) in
             self.requestNetDataFailed()
+            /// 网络加载框结束后提示权限
+            self.showSPPermissionsAlert()
         }
     }
 }
@@ -162,15 +162,39 @@ extension HomePageViewController {
     }
 }
 
-extension HomePageViewController: SPPermissionsDelegate {
+extension HomePageViewController: SPPermissionsDelegate, SPPermissionsDataSource {
+    func configure(_ cell: SPPermissionTableViewCell, for permission: SPPermission) -> SPPermissionTableViewCell {
+        switch permission {
+        case .camera:
+            cell.permissionTitleLabel.text = "相机"
+            cell.permissionDescriptionLabel.text = "请允许使用摄像头拍照或录像"
+        case .photoLibrary:
+            cell.permissionTitleLabel.text = "相册"
+            cell.permissionDescriptionLabel.text = "请允许使用相册"
+        case .microphone:
+            cell.permissionTitleLabel.text = "麦克风"
+            cell.permissionDescriptionLabel.text = "请允许使用麦克风录制音频"
+        
+        default:
+            
+            break
+        }
+        cell.button.allowTitle = "允许"
+        cell.button.allowedTitle = "已允许"
+        return cell
+    }
     
     func showSPPermissionsAlert() {
         
         let permissions = [SPPermission.camera, .photoLibrary, .microphone].filter { !$0.isAuthorized }
         
         if !permissions.isEmpty {
-            let controller = SPPermissions.native(permissions)
+            let controller = SPPermissions.dialog(permissions)
+            controller.titleText = "权限列表"
+            controller.headerText = "小书客在正常使用中需要用到以下系统权限，请允许使用"
+            controller.footerText = "小书客"
             controller.delegate = self
+            controller.dataSource = self
             controller.present(on: self)
         }
     }
