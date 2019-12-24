@@ -90,7 +90,8 @@ class PersonalViewController: BaseViewController {
             self?.showEditNameAlert()
         }
         view.settingAppBlock = { [weak self] () in
-            
+            let settingVC = SettingViewController()
+            self?.navigationController?.pushViewController(settingVC, animated: true)
         }
         view.goBackBlock = { [weak self] () in
             

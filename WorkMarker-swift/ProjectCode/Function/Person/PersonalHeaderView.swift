@@ -21,7 +21,7 @@ class PersonalHeaderView: UIView {
         self.backgroundColor = .clear
         
         self.settingBtn.setImage(UIImage(named: "settingBtn"), for: .normal)
-        self.settingBtn.addTarget(self, action: #selector(clickedSettingBtn), for: .touchUpOutside)
+        self.settingBtn.addTarget(self, action: #selector(clickedSettingBtn), for: .touchUpInside)
         self.addSubview(self.settingBtn)
         self.settingBtn.snp.makeConstraints { (make) in
             make.size.equalTo(CGSize(width: 44, height: 44))

@@ -17,6 +17,9 @@ class BaseViewController: UIViewController {
         
         self.view.backgroundColor = ColorThemeBackground
         
+        // 防止返回手势失效
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
+        
         initNavigationBarTransparent()
     }    
 

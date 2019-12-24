@@ -46,6 +46,7 @@
 		7CD97DE423A88DD70082E3D5 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD97DE323A88DD70082E3D5 /* LoginResponse.swift */; };
 		7CD97DE623A8A9170082E3D5 /* MainPopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD97DE523A8A9170082E3D5 /* MainPopMenuViewController.swift */; };
 		7CDBE13723B1F7980092BABC /* WMHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBE13623B1F7980092BABC /* WMHUD.swift */; };
+		7CDBE13923B20AA30092BABC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBE13823B20AA30092BABC /* SettingViewController.swift */; };
 		7CDE16C423A8C625002FE021 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C323A8C625002FE021 /* PersonalViewController.swift */; };
 		7CDE16C623A8D755002FE021 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C523A8D755002FE021 /* BaseCollectionViewController.swift */; };
 		7CDE16C823A8DC89002FE021 /* PersonalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */; };
@@ -101,6 +102,7 @@
 		7CD97DE323A88DD70082E3D5 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		7CD97DE523A8A9170082E3D5 /* MainPopMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPopMenuViewController.swift; sourceTree = "<group>"; };
 		7CDBE13623B1F7980092BABC /* WMHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMHUD.swift; sourceTree = "<group>"; };
+		7CDBE13823B20AA30092BABC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		7CDE16C323A8C625002FE021 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		7CDE16C523A8D755002FE021 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewController.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */,
 				7CFB525123A9C8E600EDE2B0 /* PersonalHeaderView.swift */,
 				7CFB525323A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift */,
+				7CDBE13823B20AA30092BABC /* SettingViewController.swift */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				7C1B74CE23A7708D00EACC48 /* UserGroup.swift in Sources */,
 				7C06CE6C23A211EF009AE1CA /* WebCombineOperation.swift in Sources */,
 				7CD97DDE23A872EC0082E3D5 /* LoginView.swift in Sources */,
+				7CDBE13923B20AA30092BABC /* SettingViewController.swift in Sources */,
 				7C06CE8023A39C94009AE1CA /* HomePageRequest.swift in Sources */,
 				7C1B74CA23A7705300EACC48 /* User.swift in Sources */,
 				7CDE16C423A8C625002FE021 /* PersonalViewController.swift in Sources */,
