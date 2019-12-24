@@ -11,6 +11,9 @@ import JXPagingView
 import JXSegmentedView
 import PKHUD
 
+let NotificationUserLikesChange = "NotificationUserLikesChange"
+
+
 class PersonalViewController: BaseViewController {
     
     var pagingView: JXPagingView!
@@ -19,6 +22,10 @@ class PersonalViewController: BaseViewController {
     var titles = [String]()
     var tableHeaderViewHeight: Int = 200
     var headerInSectionHeight: Int = 50
+    var urlArray = [String]()
+    
+    var isMySelf = true
+    
             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +52,7 @@ class PersonalViewController: BaseViewController {
         pagingView = preferredPagingView()
         pagingView.mainTableView.gestureDelegate = self
         pagingView.listContainerView.collectionView.gestureDelegate = self
-        pagingView.pinSectionHeaderVerticalOffset = 50
+        pagingView.pinSectionHeaderVerticalOffset = headerInSectionHeight
         self.view.addSubview(pagingView)
         pagingView.snp.makeConstraints { (make) in
             make.left.top.right.equalTo(0)
@@ -58,6 +65,14 @@ class PersonalViewController: BaseViewController {
         }
         
         segmentedView.contentScrollView = pagingView.listContainerView.collectionView
+        
+        setupSubVCURL()
+        // 延迟请求其他列表，因为第一次进来会请求第一个子列表的数据
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: 1)) {
+            self.requestSubVCTotal(index: self.urlArray.count - 1)
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUserLikeListTotal), name: NSNotification.Name(rawValue: NotificationUserLikesChange), object: nil)
     }
     
     func preferredPagingView() -> JXPagingView {
@@ -111,6 +126,37 @@ class PersonalViewController: BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.headBackgroundView.removeFromSuperview()
+    }
+}
+
+// MARK: - 设置和更新segmentTitles
+extension PersonalViewController {
+    func setupSubVCURL() {
+        if isMySelf {
+            self.urlArray = [URLForMineCourse, URLForMineCourseNotAudited, URLForMineCourseLike]
+        } else {
+            self.urlArray = [URLForMineCourse, URLForMineCourseLike]
+        }
+    }
+    
+    func requestSubVCTotal(index: Int) {
+        PersonalRequest.reqeustCourseList(url: self.urlArray[index], page: 0, size: 0, showHUD: false, success: { (data) in
+            let response = data as? PersonalResponse
+            let totalElement = response?.data?.totalElements
+            self.dataSoure.titles[index] = "\(self.titles[index])\(String(describing: totalElement))"
+            self.segmentedView.reloadDataWithoutListContainer()
+            if index > 1 {
+                self.requestSubVCTotal(index: index - 1)
+            }
+        }) { (error) in
+            
+        }
+    }
+    
+    @objc func updateUserLikeListTotal() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: 2)) {
+            self.requestSubVCTotal(index: self.titles.count - 1)
+        }
     }
 }
 
