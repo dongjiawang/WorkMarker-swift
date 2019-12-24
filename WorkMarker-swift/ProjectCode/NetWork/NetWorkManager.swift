@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import PKHUD
 
 let NetworkStatesChangeNotification = "NetworkStatesChangeNotification"
 
@@ -100,12 +99,12 @@ extension NetWorkManager {
         }
         
         if showHUD {
-            HUD.show(.systemActivity)
+            WMHUD.progressHUD(text: "文件上传中", subText: nil)
         }
         let sessionRequest = manager.request(url.splicingRequestURL(), method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
         sessionRequest.validate(contentType: content)
         sessionRequest.responseJSON { (response) in
-            HUD.hide()
+            WMHUD.hideHUD()
             requestComplete(response: response, success: success, failure: failure)
         }
     }
@@ -134,13 +133,13 @@ extension NetWorkManager {
         let requestContentType = switchRequestContentType(contentType: contentType)
         let headers = requestHeader()
         if showHUD {
-            HUD.show(.systemActivity)            
+            WMHUD.progressHUD(text: nil, subText: "网络请求中")
         }
                 
         let sessionRequest = sessionManager.request(url.splicingRequestURL(), method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers)
         sessionRequest.validate(contentType: requestContentType)
         sessionRequest.responseJSON { (response) in
-            HUD.hide()
+            WMHUD.hideHUD()
             requestComplete(response: response, success: success, failure: failure)
         }
     }
@@ -180,7 +179,7 @@ extension NetWorkManager {
                 }
             }
             if message.count > 1 {
-                HUD.flash(HUDContentType.label(message), delay: 3)
+                WMHUD.errorHUD(text: nil, subText: message, delay: 2)
             }
             failure(err)
             

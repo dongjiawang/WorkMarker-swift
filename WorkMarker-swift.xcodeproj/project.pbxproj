@@ -45,6 +45,7 @@
 		7CD97DE023A88B8B0082E3D5 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD97DDF23A88B8B0082E3D5 /* LoginRequest.swift */; };
 		7CD97DE423A88DD70082E3D5 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD97DE323A88DD70082E3D5 /* LoginResponse.swift */; };
 		7CD97DE623A8A9170082E3D5 /* MainPopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD97DE523A8A9170082E3D5 /* MainPopMenuViewController.swift */; };
+		7CDBE13723B1F7980092BABC /* WMHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBE13623B1F7980092BABC /* WMHUD.swift */; };
 		7CDE16C423A8C625002FE021 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C323A8C625002FE021 /* PersonalViewController.swift */; };
 		7CDE16C623A8D755002FE021 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C523A8D755002FE021 /* BaseCollectionViewController.swift */; };
 		7CDE16C823A8DC89002FE021 /* PersonalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */; };
@@ -99,6 +100,7 @@
 		7CD97DDF23A88B8B0082E3D5 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		7CD97DE323A88DD70082E3D5 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		7CD97DE523A8A9170082E3D5 /* MainPopMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPopMenuViewController.swift; sourceTree = "<group>"; };
+		7CDBE13623B1F7980092BABC /* WMHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMHUD.swift; sourceTree = "<group>"; };
 		7CDE16C323A8C625002FE021 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		7CDE16C523A8D755002FE021 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				7C06CE5F23A1D8E1009AE1CA /* UIColor+.swift */,
 				7C06CE6E23A24497009AE1CA /* String+.swift */,
 				7CFB524F23A9C1A400EDE2B0 /* UIDevice+.swift */,
+				7CDBE13623B1F7980092BABC /* WMHUD.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				7C06CE6A23A211D2009AE1CA /* WebDownloadOperation.swift in Sources */,
 				7CD97DE023A88B8B0082E3D5 /* LoginRequest.swift in Sources */,
 				7CFB525423A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift in Sources */,
+				7CDBE13723B1F7980092BABC /* WMHUD.swift in Sources */,
 				7CD97DE623A8A9170082E3D5 /* MainPopMenuViewController.swift in Sources */,
 				7C06CE4F23A0C21E009AE1CA /* Constants.swift in Sources */,
 				7C06CE6623A21183009AE1CA /* WebCacheManager.swift in Sources */,

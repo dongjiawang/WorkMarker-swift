@@ -8,7 +8,6 @@
 
 import UIKit
 import AVKit
-import PKHUD
 import Kingfisher
 
 typealias OnPlayerReady = () -> Void
@@ -286,7 +285,7 @@ extension HomePageTableViewCell: AVPlayerViewDelegate {
             onPlayerReady?()
         case .failed:
             self.startLoadingPlayItemAnimation(isStart: false)
-            HUD.show(.labeledError(title: "加载失败", subtitle: nil))
+            WMHUD.textHUD(text: "加载失败", delay: 1)
         default:
             break
         }

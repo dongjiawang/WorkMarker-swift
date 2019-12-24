@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PKHUD
 
 
 typealias beginLogin = (_ name: String, _ pwd: String) -> Void
@@ -113,11 +112,11 @@ class LoginView: UIView {
         let pwd = self.pwdTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
         
         if name.count == 0 {
-            HUD.flash(.labeledError(title: "请输入用户名", subtitle: ""), delay: 1.5)
+            WMHUD.textHUD(text: "请输入用户名", delay: 1)
             return
         }
         if pwd.count == 0 {
-            HUD.flash(.labeledError(title: "请输入用户密码", subtitle: ""), delay: 1.5)
+            WMHUD.textHUD(text: "请输入用户密码", delay: 1)
             return
         }
         

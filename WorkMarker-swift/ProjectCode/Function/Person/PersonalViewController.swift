@@ -9,7 +9,6 @@
 import UIKit
 import JXPagingView
 import JXSegmentedView
-import PKHUD
 
 let NotificationUserLikesChange = "NotificationUserLikesChange"
 
@@ -178,8 +177,8 @@ extension PersonalViewController {
     }
     
     func updateUserDisplayName(name: String) {
-        if name.count == 0 {
-            HUD.show(.label("不能使用空白用户名"))
+        if name.count == 0 {            
+            WMHUD.textHUD(text: "不能使用空白用户名", delay: 1)
             return
         }
         PersonalRequest.updateUserInfo(name: name, userID: "\(String(describing: user?.id))", success: { (data) in
@@ -218,7 +217,7 @@ extension PersonalViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-            HUD.flash(.labeledError(title: "获取图片失败", subtitle: "请重新选择"), delay: 1.5)
+            WMHUD.textHUD(text: "获取图片失败", delay: 1)
             return }
         self.uploadUserIcon(image: image)
         picker.dismiss(animated: true, completion: nil)
