@@ -198,39 +198,20 @@ extension PersonalViewController {
 // MARK: - 修改头像
 extension PersonalViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func showImageAlert() {
-        let alertVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "拍照", style: .default) { [weak self] (action) in
-            self?.presentImagePicker(type: .camera)
+        PhotoAssetTool.shared().showImageSheet(controller: self, photos: { (image, finished) in
+            self.uploadUserIcon(image: image)
+        }) { (image, finished) in
+            self.uploadUserIcon(image: image)
         }
-        let libraryAction = UIAlertAction(title: "从相册选取", style: .default) { [weak self] (action) in
-            self?.presentImagePicker(type: .photoLibrary)
+    }
+    
+    func uploadUserIcon(image: UIImage?) {
+        guard let newIcon = image else {
+            WMHUD.errorHUD(text: nil, subText: "选取头像错误", delay: 1)
+            return
         }
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         
-        alertVC.addAction(cameraAction)
-        alertVC.addAction(libraryAction)
-        alertVC.addAction(cancelAction)
-        self.present(alertVC, animated: true, completion: nil)
-    }
-    
-    func presentImagePicker(type: UIImagePickerController.SourceType) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = type
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        self.present(imagePicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-            WMHUD.textHUD(text: "获取图片失败", delay: 1)
-            return }
-        self.uploadUserIcon(image: image)
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func uploadUserIcon(image: UIImage) {
-        PersonalRequest.uploadUserIcon(image: image, userId: "\(String(describing: user?.id))", success: { (data) in
+        PersonalRequest.uploadUserIcon(image: newIcon, userId: "\(String(describing: user?.id))", success: { (data) in
             let response = data as? [String: Any]
             let imageUrl = response?["avatar"]
             user?.avatar = imageUrl as? String

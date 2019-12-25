@@ -50,6 +50,9 @@
 		7CDE16C423A8C625002FE021 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C323A8C625002FE021 /* PersonalViewController.swift */; };
 		7CDE16C623A8D755002FE021 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C523A8D755002FE021 /* BaseCollectionViewController.swift */; };
 		7CDE16C823A8DC89002FE021 /* PersonalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */; };
+		7CE0084123B3106500BFE57B /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE0084023B3106500BFE57B /* PhotoModel.swift */; };
+		7CE0084323B32E3C00BFE57B /* PhotoAssetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE0084223B32E3C00BFE57B /* PhotoAssetTool.swift */; };
+		7CE0084523B347C200BFE57B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE0084423B347C200BFE57B /* AssetsLibrary.framework */; };
 		7CFB525023A9C1A400EDE2B0 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB524F23A9C1A400EDE2B0 /* UIDevice+.swift */; };
 		7CFB525223A9C8E600EDE2B0 /* PersonalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB525123A9C8E600EDE2B0 /* PersonalHeaderView.swift */; };
 		7CFB525423A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB525323A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift */; };
@@ -106,6 +109,9 @@
 		7CDE16C323A8C625002FE021 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		7CDE16C523A8D755002FE021 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		7CDE16C723A8DC89002FE021 /* PersonalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewController.swift; sourceTree = "<group>"; };
+		7CE0084023B3106500BFE57B /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		7CE0084223B32E3C00BFE57B /* PhotoAssetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAssetTool.swift; sourceTree = "<group>"; };
+		7CE0084423B347C200BFE57B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		7CFB524F23A9C1A400EDE2B0 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
 		7CFB525123A9C8E600EDE2B0 /* PersonalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHeaderView.swift; sourceTree = "<group>"; };
 		7CFB525323A9F82B00EDE2B0 /* PersonalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE0084523B347C200BFE57B /* AssetsLibrary.framework in Frameworks */,
 				A07E21F6CD7CFF6D4A3E2CF9 /* Pods_WorkMarker_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +137,7 @@
 		1174CA383D10C79D19CC7790 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CE0084423B347C200BFE57B /* AssetsLibrary.framework */,
 				DC925DE33C1F17D08EDEBB9D /* Pods_WorkMarker_swift.framework */,
 			);
 			name = Frameworks;
@@ -195,6 +203,7 @@
 		7C06CE4523A09D9B009AE1CA /* ProjectCode */ = {
 			isa = PBXGroup;
 			children = (
+				7CE0083F23B3100300BFE57B /* PhotoAssetTool */,
 				7C06CE7623A379E6009AE1CA /* Entity */,
 				7C06CE4623A09DA3009AE1CA /* NetWork */,
 				7C06CE6423A21164009AE1CA /* WebCache */,
@@ -355,6 +364,15 @@
 			path = Person;
 			sourceTree = "<group>";
 		};
+		7CE0083F23B3100300BFE57B /* PhotoAssetTool */ = {
+			isa = PBXGroup;
+			children = (
+				7CE0084023B3106500BFE57B /* PhotoModel.swift */,
+				7CE0084223B32E3C00BFE57B /* PhotoAssetTool.swift */,
+			);
+			path = PhotoAssetTool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -476,6 +494,7 @@
 				7CD97DE623A8A9170082E3D5 /* MainPopMenuViewController.swift in Sources */,
 				7C06CE4F23A0C21E009AE1CA /* Constants.swift in Sources */,
 				7C06CE6623A21183009AE1CA /* WebCacheManager.swift in Sources */,
+				7CE0084323B32E3C00BFE57B /* PhotoAssetTool.swift in Sources */,
 				7C5B3EE823A71B3000BE1ED1 /* BaseTableViewController.swift in Sources */,
 				7C06CE6023A1D8E1009AE1CA /* UIColor+.swift in Sources */,
 				7C06CE7323A35F3B009AE1CA /* NetWorkManager.swift in Sources */,
@@ -506,6 +525,7 @@
 				7C06CE30239F898F009AE1CA /* AppDelegate.swift in Sources */,
 				7C06CE32239F898F009AE1CA /* SceneDelegate.swift in Sources */,
 				7CDE16C823A8DC89002FE021 /* PersonalCollectionViewController.swift in Sources */,
+				7CE0084123B3106500BFE57B /* PhotoModel.swift in Sources */,
 				7C06CE6F23A24497009AE1CA /* String+.swift in Sources */,
 				7C1B74CE23A7708D00EACC48 /* UserGroup.swift in Sources */,
 				7C06CE6C23A211EF009AE1CA /* WebCombineOperation.swift in Sources */,

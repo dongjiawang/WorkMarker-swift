@@ -74,17 +74,13 @@ class SettingViewController: BaseTableViewController {
             cacheSize += UIDevice.current.folderSizeAtPath(folderPath: NSTemporaryDirectory())
             
             var resultSize = cacheSize / 1024
-            let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = .decimal
-            numberFormatter.minimumIntegerDigits = 1
+            // 小数位最少位数
             if resultSize < 1024 {
-                numberFormatter.positiveFormat = "####.#KB"
+                cacheCell.detailTextLabel?.text = String(format: "%.1i KB", resultSize)
             } else {
                 resultSize = resultSize / 1024
-                numberFormatter.positiveFormat = "####.#MB"
+                cacheCell.detailTextLabel?.text = String(format: "%.1i MB", resultSize)
             }
-            let num = NSNumber(value: resultSize)
-            cacheCell.detailTextLabel?.text = numberFormatter.string(from: num)
             
             return cacheCell
         }
