@@ -45,7 +45,20 @@ class SettingViewController: BaseTableViewController {
     }
     
     @objc func clickedQuiBtn() {
-        
+        let alertVC = UIAlertController(title: "提示", message: "确定退出账号?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let confirAction = UIAlertAction(title: "确定", style: .default) { (action) in
+         
+            UIDevice.current.clearCookie()
+            user = nil
+            isLogin = false
+            let rootVC = self.navigationController?.viewControllers.first as! MainTabBarViewController
+            rootVC.resetMainTabVC()            
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        alertVC.addAction(cancelAction)
+        alertVC.addAction(confirAction)
+        self.present(alertVC, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,6 +94,18 @@ class SettingViewController: BaseTableViewController {
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         versionCell.detailTextLabel?.text = "V\(String(describing: version))"
         return versionCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            UIDevice.current.clearImageCache()
+            UIDevice.current.clearTmpDirectory()
+            WMHUD.progressHUD(text: nil, subText: "清除缓存中")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                WMHUD.hideHUD()
+                tableView.reloadData()
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

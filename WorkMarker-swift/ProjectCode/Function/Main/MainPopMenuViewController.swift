@@ -27,9 +27,9 @@ class MainPopMenuViewController: UIViewController {
         
         self.initMenuBtns()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: UInt64(0.1)), execute: DispatchWorkItem.init(block: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.popMenuBtnAnimation(btnIndex: 0)
-        }))
+        }
         
         self.closeBtn.setImage(UIImage(named: "透明关闭"), for: .normal)
         self.closeBtn.addTarget(self, action: #selector(clickedCloseBtn), for: .touchUpInside)

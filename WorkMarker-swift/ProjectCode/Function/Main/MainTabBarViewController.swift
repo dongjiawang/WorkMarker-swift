@@ -34,6 +34,15 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     
+    func resetMainTabVC() {
+        /// 刷新首页
+        let homeVC = self.viewControllers?.first as? HomePageViewController
+        homeVC?.refreshAction()
+        
+        self.selectedIndex = 0
+        self.tabBar.barTintColor = UIColor.clear
+        self.tabBar.backgroundImage = UIImage()
+    }
     func addChildViewControllers() {
         let home = HomePageViewController()
         self.addTabItem(controller: home, normalImage: UIImage(named: "MainTabarHomeBtn_normal")!, selectedImage: UIImage(named: "MainTabarHomeBtn_selected")!, title: "首页")
@@ -125,6 +134,8 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         homeVC?.refreshAction()
         
         /// 刷新个人中心
+        let personalVC = self.viewControllers?.last as? PersonalViewController
+        personalVC?.refreshAction()
         
     }
 }

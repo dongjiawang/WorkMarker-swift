@@ -67,7 +67,7 @@ class PersonalViewController: BaseViewController {
         
         setupSubVCURL()
         // 延迟请求其他列表，因为第一次进来会请求第一个子列表的数据
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: 1)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.requestSubVCTotal(index: self.urlArray.count - 1)
         }
         
@@ -76,6 +76,11 @@ class PersonalViewController: BaseViewController {
     
     func preferredPagingView() -> JXPagingView {
         return JXPagingListRefreshView(delegate: self)
+    }
+    
+    func refreshAction() {
+        self.headerView.setupUser(user: user!)
+        self.segmentedView.reloadData()
     }
     
     lazy var headerView = { () -> (PersonalHeaderView) in
@@ -154,7 +159,7 @@ extension PersonalViewController {
     }
     
     @objc func updateUserLikeListTotal() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: 2)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.requestSubVCTotal(index: self.titles.count - 1)
         }
     }
