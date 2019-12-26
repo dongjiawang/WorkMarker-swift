@@ -47,7 +47,7 @@ class PhotoAssetCollectionViewCell: UICollectionViewCell {
     func setupModel(model: PhotoModel) {
         guard let asset = model.photoAsset else {
             
-            self.imageView.image = UIImage(named: "")
+            self.imageView.image = UIImage(named: "drawingImage")
             self.unSelectedTip.isHidden = true
             self.selectedLabel.isHidden = true            
             return
