@@ -76,10 +76,11 @@ extension PhotoAssetActionCollectionView: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PHOTOASSETACTIONCOLLECTIONVIEWCELL, for: indexPath) as! PhotoAssetCollectionViewCell
         let cellModel = self.collectionArray[indexPath.row]
-        if self.selectedArray.contains(cellModel) {
-            cellModel.unAble = true
-            let index = self.selectedArray.firstIndex(of: cellModel) ?? 0
-            cell.selectedLabel.text = "\(index + 1)"
+        for model in self.selectedArray {
+            if model.localIdentifiter == cellModel.localIdentifiter {
+                cellModel.unAble = true
+                cell.selectedLabel.text = "\(self.selectedArray.firstIndex(of: model)! + 1)"
+            }
         }
         cell.setupModel(model: cellModel)
         

@@ -39,7 +39,11 @@
 		7C1B74D223A7730F00EACC48 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B74D123A7730F00EACC48 /* Chapter.swift */; };
 		7C1B74D423A773DC00EACC48 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B74D323A773DC00EACC48 /* Course.swift */; };
 		7C1B74D623A77A8400EACC48 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B74D523A77A8400EACC48 /* CourseList.swift */; };
+		7C20130923B5D95400E8849D /* PhotoAssetActionPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C20130823B5D95400E8849D /* PhotoAssetActionPreview.swift */; };
+		7C20130B23B5E4B600E8849D /* PhotoAssetActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C20130A23B5E4B600E8849D /* PhotoAssetActionViewController.swift */; };
 		7C5B3EE823A71B3000BE1ED1 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B3EE723A71B3000BE1ED1 /* BaseTableViewController.swift */; };
+		7C7C838523B599D600165931 /* TemplateBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7C838423B599D600165931 /* TemplateBuildView.swift */; };
+		7C7C838723B5AB2A00165931 /* TemplateBuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7C838623B5AB2A00165931 /* TemplateBuildViewController.swift */; };
 		7CD97DD723A77B650082E3D5 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD97DD623A77B650082E3D5 /* BaseResponse.swift */; };
 		7CD97DD923A77BFA0082E3D5 /* HomePageCourseListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD97DD823A77BFA0082E3D5 /* HomePageCourseListResponse.swift */; };
 		7CD97DDC23A872350082E3D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD97DDB23A872350082E3D5 /* LoginViewController.swift */; };
@@ -100,7 +104,11 @@
 		7C1B74D123A7730F00EACC48 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		7C1B74D323A773DC00EACC48 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		7C1B74D523A77A8400EACC48 /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
+		7C20130823B5D95400E8849D /* PhotoAssetActionPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAssetActionPreview.swift; sourceTree = "<group>"; };
+		7C20130A23B5E4B600E8849D /* PhotoAssetActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAssetActionViewController.swift; sourceTree = "<group>"; };
 		7C5B3EE723A71B3000BE1ED1 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		7C7C838423B599D600165931 /* TemplateBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateBuildView.swift; sourceTree = "<group>"; };
+		7C7C838623B5AB2A00165931 /* TemplateBuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateBuildViewController.swift; sourceTree = "<group>"; };
 		7CD97DD623A77B650082E3D5 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		7CD97DD823A77BFA0082E3D5 /* HomePageCourseListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCourseListResponse.swift; sourceTree = "<group>"; };
 		7CD97DDB23A872350082E3D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -375,6 +383,10 @@
 				7CE0084223B32E3C00BFE57B /* PhotoAssetTool.swift */,
 				7C10B83323B44A1B0094E375 /* PhotoAssetActionCollectionView.swift */,
 				7C10B83523B452D70094E375 /* PhotoAssetCollectionViewCell.swift */,
+				7C7C838423B599D600165931 /* TemplateBuildView.swift */,
+				7C7C838623B5AB2A00165931 /* TemplateBuildViewController.swift */,
+				7C20130823B5D95400E8849D /* PhotoAssetActionPreview.swift */,
+				7C20130A23B5E4B600E8849D /* PhotoAssetActionViewController.swift */,
 			);
 			path = PhotoAssetTool;
 			sourceTree = "<group>";
@@ -509,11 +521,13 @@
 				7C06CE5623A0E6E3009AE1CA /* HomePageViewController.swift in Sources */,
 				7CFB525023A9C1A400EDE2B0 /* UIDevice+.swift in Sources */,
 				7CDE16C623A8D755002FE021 /* BaseCollectionViewController.swift in Sources */,
+				7C7C838723B5AB2A00165931 /* TemplateBuildViewController.swift in Sources */,
 				7C06CE4923A09DD5009AE1CA /* BaseViewController.swift in Sources */,
 				7C1B74C423A733E900EACC48 /* HomePageTableViewCell.swift in Sources */,
 				7CFB525823A9FCFA00EDE2B0 /* PersonalResponse.swift in Sources */,
 				7C06CE7A23A37A85009AE1CA /* BaseRequest.swift in Sources */,
 				7CD97DDC23A872350082E3D5 /* LoginViewController.swift in Sources */,
+				7C7C838523B599D600165931 /* TemplateBuildView.swift in Sources */,
 				7C1B74D223A7730F00EACC48 /* Chapter.swift in Sources */,
 				7CD97DD923A77BFA0082E3D5 /* HomePageCourseListResponse.swift in Sources */,
 				7C06CE7123A32894009AE1CA /* AVPlayerManager.swift in Sources */,
@@ -525,6 +539,7 @@
 				7C06CE6823A21196009AE1CA /* WebDoanloader.swift in Sources */,
 				7CFB525623A9FCD900EDE2B0 /* PersonalRequest.swift in Sources */,
 				7C06CE7823A379FA009AE1CA /* BaseModel.swift in Sources */,
+				7C20130B23B5E4B600E8849D /* PhotoAssetActionViewController.swift in Sources */,
 				7C06CE6323A1DE38009AE1CA /* AVPlayerView.swift in Sources */,
 				7C1B74CC23A7707D00EACC48 /* UserAvatar.swift in Sources */,
 				7CFB525223A9C8E600EDE2B0 /* PersonalHeaderView.swift in Sources */,
@@ -537,6 +552,7 @@
 				7C1B74CE23A7708D00EACC48 /* UserGroup.swift in Sources */,
 				7C06CE6C23A211EF009AE1CA /* WebCombineOperation.swift in Sources */,
 				7CD97DDE23A872EC0082E3D5 /* LoginView.swift in Sources */,
+				7C20130923B5D95400E8849D /* PhotoAssetActionPreview.swift in Sources */,
 				7CDBE13923B20AA30092BABC /* SettingViewController.swift in Sources */,
 				7C06CE8023A39C94009AE1CA /* HomePageRequest.swift in Sources */,
 				7C10B83623B452D70094E375 /* PhotoAssetCollectionViewCell.swift in Sources */,
