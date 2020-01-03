@@ -33,7 +33,7 @@ class BaseCollectionViewController: BaseViewController {
     }
     
     lazy var collectionView = { () -> (UICollectionView) in
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.alwaysBounceVertical = true

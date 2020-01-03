@@ -111,7 +111,10 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
                 case 0:
                     print("添加音频")
                 case 1:
-                    print("添加视频")
+                    let videoVC = VideoAddNewViewController()
+                    let rootNav = UIApplication.shared.windows.first?.rootViewController as! UINavigationController
+                    rootNav.pushViewController(videoVC, animated: true)
+                    
                 default:
                     break
                 }

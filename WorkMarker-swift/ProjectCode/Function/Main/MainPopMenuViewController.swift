@@ -69,10 +69,10 @@ class MainPopMenuViewController: UIViewController {
     }
     
     @objc func clickedMenuBtn(btn: UIButton) {
+        self.dismissSelf(animated: false)
         if selectedAddTypeBlock != nil {
             self.selectedAddTypeBlock!(btn.tag - 10000)
         }
-        self.dismissSelf(animated: false)
     }
     
     func setupBtnImageAndTitle(spacing: CGFloat, btn: UIButton) {

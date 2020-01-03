@@ -180,9 +180,8 @@ class PhotoAssetTool: NSObject {
         option.resizeMode = .none
         option.isNetworkAccessAllowed = true
         PHCachingImageManager.default().requestImage(for: asset, targetSize: size, contentMode: .aspectFit, options: option) { (image, info) in
-            let cancel = info?[PHImageCancelledKey] as! Bool
             let error = info?[PHImageErrorKey] as? Error
-            if error == nil && !cancel {
+            if error == nil {
                 success(image)
             }
         }

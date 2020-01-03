@@ -10,7 +10,6 @@ import UIKit
 import Photos
 
 class PhotoModel: NSObject {
-    var photoAsset: PHAsset?
     var videoAsset: AVAsset?
     var videoUrlAsset: AVURLAsset?
     var isSelected = false
@@ -20,12 +19,15 @@ class PhotoModel: NSObject {
     var thumbnailImage: UIImage?
     var originalImage: UIImage?
     
-    func setPhotoAsset(asset: PHAsset) {
-        self.photoAsset = asset
-        if asset.mediaType == .video {
-            self.videoDuration = self.calculateVideoTime(duration: asset.duration)
+    var photoAsset: PHAsset? {
+        willSet {
+           if newValue!.mediaType == .video {
+                self.videoDuration = self.calculateVideoTime(duration: newValue!.duration)
+            }
         }
     }
+    
+    
     
     func calculateVideoTime(duration: TimeInterval) -> String {
         let hours = Int(duration / 3600)
